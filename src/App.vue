@@ -371,7 +371,14 @@ export default {
     },
 
     setDateOfBirth(newValue) {
-      this.dateOfBirth = newValue.trim()
+      if(newValue.length >= 10) {
+        this.dateOfBirth = newValue.trim()
+        this.dateOfBirth = this.dateOfBirth.slice(0,10)
+        return
+      } else {
+        this.dateOfBirth = newValue.trim()
+      }
+      
       const pattern = /\./gi   
       const  changedNewValue = newValue.replace(pattern, '') 
       if(!Number(changedNewValue)) {
@@ -410,7 +417,14 @@ export default {
     },
 
     setTel(newValue) {
-      this.tel = newValue
+      if(newValue.length >= 16) {
+        this.tel = newValue
+        this.tel = this.tel.slice(0,10)
+        return
+      } else {
+        this.tel = newValue
+      }
+      
       const pattern = /\-/gi  
       const  changedNewValue = newValue.replace(pattern, '') 
       if(!Number(changedNewValue.replace('(', '').replace(')', ''))) {
@@ -518,7 +532,13 @@ export default {
       this.issuedBy = newValue.trim()
     },
     setDateOfIssue(newValue) {
-      this.dateOfIssue = newValue.trim()
+      if(newValue.length >= 10) {
+        this.dateOfIssue = newValue.trim()
+        this.dateOfIssue = this.dateOfIssue.slice(0,10)
+        return
+      } else {
+        this.dateOfIssue = newValue.trim()
+      }
       const pattern = /\./gi   
       const  changedNewValue = newValue.replace(pattern, '')  
       if(!Number(changedNewValue)) {
