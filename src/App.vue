@@ -419,7 +419,7 @@ export default {
     setTel(newValue) {
       if(newValue.length >= 16) {
         this.tel = newValue
-        this.tel = this.tel.slice(0,10)
+        this.tel = this.tel.slice(0,16)
         return
       } else {
         this.tel = newValue
